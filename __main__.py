@@ -1,9 +1,6 @@
 from lib.runner import TaskRunner
-from test.base_tests import TestBaseLine
-# run = TaskRunner()
-
-# run.load_tasks_from_file('examples/single_task.json')
-
+from test import TestBaseLine
+from test import TestTaskRunner
 import unittest
 import sys
 
@@ -29,6 +26,9 @@ if len(args) >= 2:
 	else:
 		# Start the unit tests
 		suite = unittest.TestLoader().loadTestsFromTestCase(TestBaseLine)
+		unittest.TextTestRunner(verbosity=2).run(suite)
+
+		suite = unittest.TestLoader().loadTestsFromTestCase(TestTaskRunner)
 		unittest.TextTestRunner(verbosity=2).run(suite)
 else:
 	banner()

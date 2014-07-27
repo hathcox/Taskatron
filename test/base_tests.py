@@ -1,5 +1,4 @@
-from lib.task import Task
-from lib.runner import TaskRunner
+from lib import TaskRunner
 import unittest
 
 
